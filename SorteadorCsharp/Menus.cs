@@ -7,7 +7,8 @@ namespace SorteadorCsharp
 {
     public class Menus
     {
-        public static void Menu() // Exibe o menu principal na tela
+        // Exibe o menu principal na tela
+        public static void Menu()
         {
             string barras = new string('=', 37); // Cria uma linha de "=" para o topo e rodapé
             string titulo = "SORTEADOR";
@@ -29,7 +30,8 @@ namespace SorteadorCsharp
             Console.Write("\nEscolha uma opção: ");   // Solicita escolha do usuário
         }
 
-        public static void EscolhaInicial() // Solicita os valores iniciais e finais, realiza o sorteio e exibe o resultado
+        // Solicita os valores iniciais e finais, realiza o sorteio e exibe o resultado
+        public static void EscolhaInicial()
         {
             Console.Clear();
 
@@ -47,7 +49,8 @@ namespace SorteadorCsharp
             RepetirSorteio(); // Pergunta se deseja sortear novamente
         }
 
-        public static void SorteioAlternativo() // Solicita valores e realiza sorteio sem repetir o último resultado
+        // Solicita valores e realiza sorteio sem repetir o último resultado
+        public static void SorteioAlternativo()
         {
             Console.Clear();
 
@@ -65,7 +68,8 @@ namespace SorteadorCsharp
             RepetirSorteio();
         }
 
-        public static void RepetirSorteio() // Pergunta ao usuário se deseja sortear outro número
+        // Pergunta ao usuário se deseja sortear outro número
+        public static void RepetirSorteio()
         {
             Console.Write($"\nGostaria de sortear outro número?(s/n): ");
             char resposta = char.Parse(Console.ReadLine().ToLower());
@@ -92,7 +96,8 @@ namespace SorteadorCsharp
             }
         }
 
-        public static void RepetirResultado() // Pergunta se pode repetir o resultado anterior no novo sorteio
+        // Pergunta se pode repetir o resultado anterior no novo sorteio
+        public static void RepetirResultado()
         {
             Sorteador valores;
 
@@ -121,7 +126,8 @@ namespace SorteadorCsharp
             }
         }
 
-        public static void Sair() // Exibe mensagem de saída e encerra o programa
+        // Exibe mensagem de saída e encerra o programa
+        public static void Sair()
         {
             Console.Clear();
             Console.WriteLine("Obrigado por utilizar o sorteador!");

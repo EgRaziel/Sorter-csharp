@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SorteadorCsharp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c8acd4c1536888141e2825c76a31223ab0bced6e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f3312367323ebfca1851ec637fefaf0315ea6784")]
 [assembly: System.Reflection.AssemblyProductAttribute("SorteadorCsharp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SorteadorCsharp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
