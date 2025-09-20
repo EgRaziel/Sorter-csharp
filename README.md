@@ -1,2 +1,2 @@
 # Sorteador_CSharp
-Sorteador .exe simples feito em C#
+- Sorteador .exe simples feito em C#
