@@ -12,3 +12,4 @@ C:\Users\Gabriel\Documents\GitHub\Sorteador_CSharp\SorteadorCsharp\obj\Debug\net
 C:\Users\Gabriel\Documents\GitHub\Sorteador_CSharp\SorteadorCsharp\obj\Debug\net9.0\SorteadorCsharp.pdb
 C:\Users\Gabriel\Documents\GitHub\Sorteador_CSharp\SorteadorCsharp\obj\Debug\net9.0\SorteadorCsharp.genruntimeconfig.cache
 C:\Users\Gabriel\Documents\GitHub\Sorteador_CSharp\SorteadorCsharp\obj\Debug\net9.0\ref\SorteadorCsharp.dll
+C:\Users\Gabriel\Documents\GitHub\Sorteador_CSharp\SorteadorCsharp\obj\Debug\net9.0\SorteadorCsharp.sourcelink.json

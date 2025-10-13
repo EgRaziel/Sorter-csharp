@@ -7,23 +7,30 @@ namespace SorteadorCsharp
     {
         static void Main(string[] args)
         {
-            Menus.Menu(); // Exibe o menu principal para o usuário
-            int opcao = int.Parse(Console.ReadLine()); // Lê a opção escolhida pelo usuário
+            Menus.Menu();
 
-            // Enquanto a opção não for 0 ou 1, solicita uma opção válida
-            while (opcao != 0 && opcao != 1)
+            int option = int.Parse(Console.ReadLine());
+
+            // Keeps asking while the option is not 0 or 1
+            while (option != 0 && option != 1)
             {
-                System.Console.WriteLine("Opção inválida!"); // Informa que a opção é inválida
-                Menus.Menu(); // Exibe o menu novamente
-                opcao = int.Parse(Console.ReadLine()); // Lê nova opção
+                Console.Clear();
+
+                System.Console.WriteLine("Invalid Option!");
+
+                System.Threading.Thread.Sleep(2000);
+                Menus.Menu();
+
+                option = int.Parse(Console.ReadLine());
             }
-            if (opcao == 1)
+
+            if (option == 1)
             {
-                Menus.EscolhaInicial(); // Inicia o processo de sorteio
+                Menus.StartChoice();
             }
-            else if (opcao == 0)
+            else if (option == 0)
             {
-                Menus.Sair(); // Encerra o programa
+                Menus.Exit();
             }
         }
     }

@@ -7,142 +7,150 @@ namespace SorteadorCsharp
 {
     public class Menus
     {
-        // Exibe o menu principal na tela
         public static void Menu()
         {
-            string barras = new string('=', 37); // Cria uma linha de "=" para o topo e rodapé
-            string titulo = "SORTEADOR";
-            int largura = barras.Length;
-            int espacos = (largura - titulo.Length) / 2; // Calcula espaços para centralizar o título
+            // Calculate spaces for centering the title
+            string bars = new string('=', 37);
+            string title = "SORTER";
+            int width = bars.Length;
+            int spaces = (width - title.Length) / 2;
 
-            System.Threading.Thread.Sleep(400); // Pausa para efeito visual
-            System.Console.WriteLine(barras);   // Exibe linha superior
+            // Display the menu with a slight delay for better user experience
             System.Threading.Thread.Sleep(400);
-            Console.WriteLine(new string(' ', espacos) + titulo); // Exibe título centralizado
-            System.Threading.Thread.Sleep(400);
-            System.Console.WriteLine(barras);   // Exibe linha inferior
+            System.Console.WriteLine(bars);
 
             System.Threading.Thread.Sleep(400);
-            Console.WriteLine("\n1. Sortear número"); // Opção de sorteio
+            Console.WriteLine(new string(' ', spaces) + title);
+
             System.Threading.Thread.Sleep(400);
-            Console.WriteLine("0. Sair");             // Opção de sair
+            System.Console.WriteLine(bars);
+
             System.Threading.Thread.Sleep(400);
-            Console.Write("\nEscolha uma opção: ");   // Solicita escolha do usuário
+            Console.WriteLine("\n1. Sort number");
+
+            System.Threading.Thread.Sleep(400);
+            Console.WriteLine("0. Exit");
+
+            System.Threading.Thread.Sleep(400);
+            Console.Write("\nChoose an option: ");
         }
 
-        // Solicita os valores iniciais e finais, realiza o sorteio e exibe o resultado
-        public static void EscolhaInicial()
+        public static void StartChoice()
         {
             Console.Clear();
 
-            Console.Write("Número Inicial: ");
-            int numeroInicial = int.Parse(Console.ReadLine()); // Lê valor inicial
-            Console.Write("Número Final: ");
-            int numeroFinal = int.Parse(Console.ReadLine());   // Lê valor final
+            Console.Write("Initial Number: ");
+            int initialNumber = int.Parse(Console.ReadLine());
 
-            Sorteador valores = new Sorteador(numeroInicial, numeroFinal); // Cria objeto sorteador
-            valores.SortearNumero(); // Realiza o sorteio
+            Console.Write("Final Number: ");
+            int finalNumber = int.Parse(Console.ReadLine());
+
+            Sorter values = new Sorter(initialNumber, finalNumber);
+            values.SortNumber();
 
             Console.Clear();
-            Console.Write($"Resultado: {valores.Resultado}\n"); // Exibe resultado
+            Console.Write($"Result: {values.Result}\n");
 
-            RepetirSorteio(); // Pergunta se deseja sortear novamente
+            RepeatSort();
         }
 
-        // Solicita valores e realiza sorteio sem repetir o último resultado
-        public static void SorteioAlternativo()
+        public static void AlternateSort()
         {
             Console.Clear();
 
-            Console.Write("Número Inicial: ");
-            int numeroInicial = int.Parse(Console.ReadLine());
-            Console.Write("Número Final: ");
-            int numeroFinal = int.Parse(Console.ReadLine());
+            Console.Write("Initial Number: ");
+            int initialNumber = int.Parse(Console.ReadLine());
 
-            Sorteador valores = new Sorteador(numeroInicial, numeroFinal);
-            valores.SortearNumeroDiferente(); // Sorteia número diferente do anterior
+            Console.Write("Final Number: ");
+            int finalNumber = int.Parse(Console.ReadLine());
+
+            Sorter values = new Sorter(initialNumber, finalNumber);
+            values.SortDifferentNumber();
 
             Console.Clear();
-            Console.Write($"Resultado: {valores.Resultado}\n");
+            Console.Write($"Result: {values.Result}\n");
 
-            RepetirSorteio();
+            RepeatSort();
         }
 
-        // Pergunta ao usuário se deseja sortear outro número
-        public static void RepetirSorteio()
+        public static void RepeatSort()
         {
-            Console.Write($"\nGostaria de sortear outro número?(s/n): ");
-            char resposta = char.Parse(Console.ReadLine().ToLower());
+            Console.Write($"\nWould you like to sort another number? (y/n): ");
+            char response = char.Parse(Console.ReadLine().ToLower());
 
-            // Valida resposta do usuário
-            while (resposta != 's' && resposta != 'n')
+            // Same thing as Program.cs
+            while (response != 'y' && response != 'n')
             {
                 Console.Clear();
-                Console.Write("Opção inválida!");
+                Console.Write("Invalid option!");
                 System.Threading.Thread.Sleep(2000);
 
                 Console.Clear();
-                Console.Write("Gostaria de sortear outro número?(s/n): ");
-                resposta = char.Parse(Console.ReadLine().ToLower());
+                Console.Write("Would you like to sort another number? (y/n): ");
+                response = char.Parse(Console.ReadLine().ToLower());
             }
 
-            if (resposta == 's')
+            if (response == 'y')
             {
-                RepetirResultado(); // Pergunta se pode repetir o resultado anterior
+                RepeatResult();
             }
-            else if (resposta == 'n')
+            else if (response == 'n')
             {
-                Sair(); // Encerra o programa
+                Exit();
             }
         }
 
-        // Pergunta se pode repetir o resultado anterior no novo sorteio
-        public static void RepetirResultado()
+        public static void RepeatResult()
         {
-            Sorteador valores;
+            Sorter values;
 
-            Console.Write($"\nRepetir o resultado no novo sorteio?(s/n): ");
-            char resposta = char.Parse(Console.ReadLine().ToLower());
+            Console.Write($"\nRepeat the result in the new draw?(y/n): ");
+            char response = char.Parse(Console.ReadLine().ToLower());
 
-            // Valida resposta do usuário
-            while (resposta != 's' && resposta != 'n')
+            // Same thing as above
+            while (response != 'y' && response != 'n')
             {
                 Console.Clear();
-                Console.Write("Opção inválida!");
+
+                Console.Write("Invalid option!");
                 System.Threading.Thread.Sleep(500);
 
                 Console.Clear();
-                Console.Write("Repetir o resultado no novo sorteio?(s/n): ");
-                resposta = char.Parse(Console.ReadLine().ToLower());
+
+                Console.Write("Repeat the result in the new draw?(y/n): ");
+                response = char.Parse(Console.ReadLine().ToLower());
             }
 
-            if (resposta == 's')
+            if (response == 'y')
             {
-                EscolhaInicial(); // Sorteia normalmente (pode repetir resultado)
+                StartChoice();
             }
-            else if (resposta == 'n')
+            else if (response == 'n')
             {
-                SorteioAlternativo(); // Sorteia sem repetir o resultado anterior
+                AlternateSort();
             }
         }
 
-        // Exibe mensagem de saída e encerra o programa
-        public static void Sair()
+        public static void Exit()
         {
             Console.Clear();
-            Console.WriteLine("Obrigado por utilizar o sorteador!");
+            Console.WriteLine("Thank you for using the sorter!");
             System.Threading.Thread.Sleep(1000);
 
-            Console.Write("Saindo");
+            // Simulates a loading effect before exiting by printing dots with delays
+            Console.Write("Exiting");
+
             System.Threading.Thread.Sleep(750);
             Console.Write(".");
+
             System.Threading.Thread.Sleep(750);
             Console.Write(".");
+
             System.Threading.Thread.Sleep(750);
             Console.Write(".");
             System.Threading.Thread.Sleep(1000);
 
-            Environment.Exit(0); // Finaliza o programa
+            Environment.Exit(0); // Ends the program
         }
     }
 }
