@@ -9,21 +9,13 @@ namespace SorteadorCsharp
     {
         public static void Menu()
         {
-            // Calculate spaces for centering the title
-            string bars = new string('=', 37);
-            string title = "SORTER";
-            int width = bars.Length;
-            int spaces = (width - title.Length) / 2;
-
-            // Display the menu with a slight delay for better user experience
             System.Threading.Thread.Sleep(400);
-            System.Console.WriteLine(bars);
-
+            Console.WriteLine("+-------------------------------------+");
             System.Threading.Thread.Sleep(400);
-            Console.WriteLine(new string(' ', spaces) + title);
-
+            Console.WriteLine("+               SORTER         v1.1.1 +");
             System.Threading.Thread.Sleep(400);
-            System.Console.WriteLine(bars);
+            Console.WriteLine("+-------------------------------------+");
+
 
             System.Threading.Thread.Sleep(400);
             Console.WriteLine("\n1. Sort number");
