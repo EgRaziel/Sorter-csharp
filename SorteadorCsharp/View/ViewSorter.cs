@@ -2,17 +2,18 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using SorteadorCsharp.Controller;
 
 namespace SorteadorCsharp
 {
-    public class Menus
+    public class ViewSorter
     {
         public static void Menu()
         {
             System.Threading.Thread.Sleep(400);
             Console.WriteLine("+-------------------------------------+");
             System.Threading.Thread.Sleep(400);
-            Console.WriteLine("+               SORTER         v1.1.1 +");
+            Console.WriteLine("+               SORTER         v1.2.0 +");
             System.Threading.Thread.Sleep(400);
             Console.WriteLine("+-------------------------------------+");
 
@@ -32,16 +33,15 @@ namespace SorteadorCsharp
             Console.Clear();
 
             Console.Write("Initial Number: ");
-            int initialNumber = int.Parse(Console.ReadLine());
+            int initialNumber = int.Parse(Console.ReadLine() ?? "0");
 
             Console.Write("Final Number: ");
-            int finalNumber = int.Parse(Console.ReadLine());
+            int finalNumber = int.Parse(Console.ReadLine() ?? "0");
 
-            Sorter values = new Sorter(initialNumber, finalNumber);
-            values.SortNumber();
+            ControllerSorter.SortNumber(initialNumber, finalNumber, out int result);
 
             Console.Clear();
-            Console.Write($"Result: {values.Result}\n");
+            Console.Write($"Result: {result}\n");
 
             RepeatSort();
         }
@@ -51,42 +51,41 @@ namespace SorteadorCsharp
             Console.Clear();
 
             Console.Write("Initial Number: ");
-            int initialNumber = int.Parse(Console.ReadLine());
+            int initialNumber = int.Parse(Console.ReadLine() ?? "0");
 
             Console.Write("Final Number: ");
-            int finalNumber = int.Parse(Console.ReadLine());
+            int finalNumber = int.Parse(Console.ReadLine() ?? "0");
 
-            Sorter values = new Sorter(initialNumber, finalNumber);
-            values.SortDifferentNumber();
+            ControllerSorter.SortDifferentNumber(initialNumber, finalNumber, out int result);
 
             Console.Clear();
-            Console.Write($"Result: {values.Result}\n");
+            Console.Write($"Result: {result}\n");
 
             RepeatSort();
         }
 
         public static void RepeatSort()
         {
-            Console.Write($"\nWould you like to sort another number? (y/n): ");
-            char response = char.Parse(Console.ReadLine().ToLower());
+            Console.Write($"\nWould you like to sort another number?(y/n): ");
+            string response = (Console.ReadLine() ?? "n").ToLower(); // Prevents exception when uppercase input is given
 
             // Same thing as Program.cs
-            while (response != 'y' && response != 'n')
+            while (response != "y" && response != "n")
             {
                 Console.Clear();
                 Console.Write("Invalid option!");
                 System.Threading.Thread.Sleep(2000);
 
                 Console.Clear();
-                Console.Write("Would you like to sort another number? (y/n): ");
-                response = char.Parse(Console.ReadLine().ToLower());
+                Console.Write("Would you like to sort another number?(y/n): ");
+                response = (Console.ReadLine() ?? "n").ToLower();
             }
 
-            if (response == 'y')
+            if (response == "y")
             {
                 RepeatResult();
             }
-            else if (response == 'n')
+            else if (response == "n")
             {
                 Exit();
             }
@@ -94,13 +93,10 @@ namespace SorteadorCsharp
 
         public static void RepeatResult()
         {
-            Sorter values;
+            Console.Write($"\nRepeat the result in the new sort?(y/n): ");
+            string response = (Console.ReadLine() ?? "n").ToLower();
 
-            Console.Write($"\nRepeat the result in the new draw?(y/n): ");
-            char response = char.Parse(Console.ReadLine().ToLower());
-
-            // Same thing as above
-            while (response != 'y' && response != 'n')
+            while (response != "y" && response != "n")
             {
                 Console.Clear();
 
@@ -109,15 +105,15 @@ namespace SorteadorCsharp
 
                 Console.Clear();
 
-                Console.Write("Repeat the result in the new draw?(y/n): ");
-                response = char.Parse(Console.ReadLine().ToLower());
+                Console.Write("Repeat the result in the new sort?(y/n): ");
+                response = (Console.ReadLine() ?? "n").ToLower();
             }
 
-            if (response == 'y')
+            if (response == "y")
             {
                 StartChoice();
             }
-            else if (response == 'n')
+            else if (response == "n")
             {
                 AlternateSort();
             }

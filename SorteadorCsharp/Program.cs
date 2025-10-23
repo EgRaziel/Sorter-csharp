@@ -7,9 +7,9 @@ namespace SorteadorCsharp
     {
         static void Main(string[] args)
         {
-            Menus.Menu();
+            ViewSorter.Menu();
 
-            int option = int.Parse(Console.ReadLine());
+            int option = int.Parse(Console.ReadLine() ?? "0");
 
             // Keeps asking while the option is not 0 or 1
             while (option != 0 && option != 1)
@@ -19,18 +19,19 @@ namespace SorteadorCsharp
                 System.Console.WriteLine("Invalid Option!");
 
                 System.Threading.Thread.Sleep(2000);
-                Menus.Menu();
+                ViewSorter.Menu();
 
-                option = int.Parse(Console.ReadLine());
+                option = int.Parse(Console.ReadLine() ?? "0");
             }
 
-            if (option == 1)
+            switch (option)
             {
-                Menus.StartChoice();
-            }
-            else if (option == 0)
-            {
-                Menus.Exit();
+                case 1:
+                    ViewSorter.StartChoice();
+                    break;
+                case 0:
+                    ViewSorter.Exit();
+                    break;
             }
         }
     }

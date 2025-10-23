@@ -5,13 +5,13 @@ using System.Threading.Tasks;
 
 namespace SorteadorCsharp
 {
-    public class Sorter
+    public class ModelSorter
     {
         public int StartNumber { get; set; }
         public int EndNumber { get; set; }
         public int Result { get; private set; }
 
-        public Sorter(int startNumber, int endNumber)
+        public ModelSorter(int startNumber, int endNumber)
         {
             StartNumber = startNumber;
             EndNumber = endNumber;
@@ -19,13 +19,13 @@ namespace SorteadorCsharp
 
         public void SortNumber()
         {
-            Random random = new Random();
+            Random random = new();
             Result = random.Next(StartNumber, EndNumber + 1);
         }
 
         public void SortDifferentNumber()
         {
-            Random random = new Random();
+            Random random = new();
             int newResult = Result;
 
             // Repeats the sorting until a different number is found
