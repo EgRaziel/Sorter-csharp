@@ -13,7 +13,7 @@ namespace SorteadorCsharp
             System.Threading.Thread.Sleep(400);
             Console.WriteLine("+-------------------------------------+");
             System.Threading.Thread.Sleep(400);
-            Console.WriteLine("+               SORTER         v1.2.0 +");
+            Console.WriteLine("+               SORTER         v1.2.1 +");
             System.Threading.Thread.Sleep(400);
             Console.WriteLine("+-------------------------------------+");
 
@@ -38,10 +38,8 @@ namespace SorteadorCsharp
             Console.Write("Final Number: ");
             int finalNumber = int.Parse(Console.ReadLine() ?? "0");
 
-            ControllerSorter.SortNumber(initialNumber, finalNumber, out int result);
-
             Console.Clear();
-            Console.Write($"Result: {result}\n");
+            Console.Write($"Result: {ControllerSorter.SortNumber(initialNumber, finalNumber)}\n");
 
             RepeatSort();
         }
@@ -56,10 +54,8 @@ namespace SorteadorCsharp
             Console.Write("Final Number: ");
             int finalNumber = int.Parse(Console.ReadLine() ?? "0");
 
-            ControllerSorter.SortDifferentNumber(initialNumber, finalNumber, out int result);
-
             Console.Clear();
-            Console.Write($"Result: {result}\n");
+            Console.Write($"Result: {ControllerSorter.SortDifferentNumber(initialNumber, finalNumber)}\n");
 
             RepeatSort();
         }

@@ -7,18 +7,16 @@ namespace SorteadorCsharp.Controller
 {
     public class ControllerSorter
     {
-        public static void SortNumber(int startNumber, int endNumber, out int result)
+        public static int SortNumber(int startNumber, int endNumber)
         {
             ModelSorter modelSorter = new(startNumber, endNumber);
-            modelSorter.SortNumber();
-            result = modelSorter.Result;
+            return modelSorter.SortNumber();
         }
 
-        public static void SortDifferentNumber(int startNumber, int endNumber, out int result)
+        public static int SortDifferentNumber(int startNumber, int endNumber)
         {
             ModelSorter modelSorter = new(startNumber, endNumber);
-            modelSorter.SortDifferentNumber();
-            result = modelSorter.Result;
+            return modelSorter.SortDifferentNumber();
         }
     }
 }
