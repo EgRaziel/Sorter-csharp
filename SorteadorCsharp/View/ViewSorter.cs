@@ -13,7 +13,7 @@ namespace SorteadorCsharp
             System.Threading.Thread.Sleep(400);
             Console.WriteLine("+-------------------------------------+");
             System.Threading.Thread.Sleep(400);
-            Console.WriteLine("+               SORTER         v1.3.0 +");
+            Console.WriteLine("+               SORTER         v1.3.1 +");
             System.Threading.Thread.Sleep(400);
             Console.WriteLine("+-------------------------------------+");
 
@@ -62,7 +62,7 @@ namespace SorteadorCsharp
 
         public static void RepeatSort()
         {
-            Console.Write($"\nWould you like to sort another number?(y/n): ");
+            Console.Write($"\nWould you like to sort another number? (y/n): ");
             string response = (Console.ReadLine() ?? "n").ToLower(); // Prevents exception when uppercase input is given
 
             // Same thing as Program.cs
@@ -73,7 +73,7 @@ namespace SorteadorCsharp
                 System.Threading.Thread.Sleep(2000);
 
                 Console.Clear();
-                Console.Write("Would you like to sort another number?(y/n): ");
+                Console.Write("Would you like to sort another number? (y/n): ");
                 response = (Console.ReadLine() ?? "n").ToLower();
             }
 
@@ -89,7 +89,7 @@ namespace SorteadorCsharp
 
         public static void RepeatResult()
         {
-            Console.Write($"\nRepeat the result in the new sort?(y/n): ");
+            Console.Write($"\nRepeat the result in the new sort? (y/n): ");
             string response = (Console.ReadLine() ?? "n").ToLower();
 
             while (response != "y" && response != "n")
@@ -101,7 +101,7 @@ namespace SorteadorCsharp
 
                 Console.Clear();
 
-                Console.Write("Repeat the result in the new sort?(y/n): ");
+                Console.Write("Repeat the result in the new sort? (y/n): ");
                 response = (Console.ReadLine() ?? "n").ToLower();
             }
 
