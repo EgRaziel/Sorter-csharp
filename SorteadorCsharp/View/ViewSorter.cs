@@ -13,7 +13,7 @@ namespace SorteadorCsharp
             System.Threading.Thread.Sleep(400);
             Console.WriteLine("+-------------------------------------+");
             System.Threading.Thread.Sleep(400);
-            Console.WriteLine("+               SORTER         v1.2.1 +");
+            Console.WriteLine("+               SORTER         v1.3.0 +");
             System.Threading.Thread.Sleep(400);
             Console.WriteLine("+-------------------------------------+");
 

@@ -7,9 +7,16 @@ namespace SorteadorCsharp
 {
     public class ModelSorter
     {
+        private readonly Random random = new();
+        
         public int StartNumber { get; set; }
         public int EndNumber { get; set; }
-        public int Result { get; set; }
+        public int Result { get; private set; }
+
+        public ModelSorter()
+        {
+
+        }
 
         public ModelSorter(int startNumber, int endNumber)
         {
@@ -19,23 +26,27 @@ namespace SorteadorCsharp
 
         public int SortNumber()
         {
-            Random random = new();
             Result = random.Next(StartNumber, EndNumber + 1);
             return Result;
         }
 
         public int SortDifferentNumber()
         {
-            Random random = new();
-            int newResult = Result;
-
-            // Repeats the sorting until a different number is found
-            while (newResult == Result && EndNumber > StartNumber)
+            // Return StartNumber if user enters the same number as Initial Number and Final Number
+            if (StartNumber == EndNumber)
             {
-                SortNumber();
+                return StartNumber;
             }
+            
+            int previousResult = Result;
+            int newResult;
 
-            return Result;
+            do
+            {
+                newResult = SortNumber();
+            } while (newResult == previousResult);
+
+            return newResult;
         }
     }
 }
