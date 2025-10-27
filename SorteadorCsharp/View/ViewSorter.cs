@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using SorteadorCsharp.Controller;
 
-namespace SorteadorCsharp
+namespace SorteadorCsharp.View
 {
     public class ViewSorter
     {
@@ -13,7 +13,7 @@ namespace SorteadorCsharp
             System.Threading.Thread.Sleep(400);
             Console.WriteLine("+-------------------------------------+");
             System.Threading.Thread.Sleep(400);
-            Console.WriteLine("+               SORTER         v1.3.1 +");
+            Console.WriteLine("+               SORTER         v1.3.2 +");
             System.Threading.Thread.Sleep(400);
             Console.WriteLine("+-------------------------------------+");
 

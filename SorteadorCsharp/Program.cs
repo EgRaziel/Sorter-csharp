@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.Design;
 using System.Runtime.CompilerServices;
+using SorteadorCsharp.View;
 
 namespace SorteadorCsharp
 {
